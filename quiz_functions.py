@@ -4,6 +4,24 @@ import random
 def class_result_function(questions):
     results = []
 
+    for x in questions:
+        print(f'{x['question']}')
+        for key, value in x['options'].items():
+            print(f'    {key}: {value}')
+
+        answer_check = True
+        while answer_check:
+            
+            answer = str(input().upper())
+            if(answer in x['options']):
+                answer_check = False
+            else:
+                print('Invalid input, please try again:\n')
+            
+
+        class_result = x['class_map'][answer]
+        results.append(class_result)
+
     return results
 
 def grouping_function():
